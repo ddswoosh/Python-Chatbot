@@ -1,0 +1,24 @@
+import re
+import random
+
+
+class Bot:
+    
+    greetings = ["Hi",'Hello','Hey there!']
+    index_funds = ['SPY','NASDAQ','Dow Jones','Gold Select']
+    credit_bureaus = ["Experian", "Transunion", "Equifax"]
+    greeting_responses = {'Credit':'/s*credit',
+        
+    }
+    
+    def greeting(self):
+        self.opening = input("Hello, I am your personal finance chatbot! What's your name?")
+        print(f"Nice to meet you {self.opening}! What part of finance and investing are you interested in?.")
+        
+        
+        
+    
+    
+    
+bot=Bot()
+bot.greeting()
