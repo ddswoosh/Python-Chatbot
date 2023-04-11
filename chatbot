@@ -3,38 +3,31 @@ import random
 
 
 class Bot:
-    
-    exit = ["Bye","Goodbye","See Ya","Quit","Exit","End","Stop"]
-    greetings = ["Hi",'Hello','Hey there!']
-    index_funds = ['SPY','NASDAQ','Dow Jones','Gold Select']
+    exit = ["Bye", "Goodbye", "See Ya", "Quit", "Exit", "End", "Stop"]
+    exit_responses = ["Have a great day!","Don't lose too much in the stock market today!"]
+    greetings = ["Hi", 'Hello', 'Hey there!']
+    index_funds = ['SPY', 'NASDAQ', 'Dow Jones', 'Gold Select']
     credit_bureaus = ["Experian", "Transunion", "Equifax"]
-    greeting_responses = {'Credit':'*/s*credit',
-        
-    }
-    
-    allchat = input()
-    
-    while str(allchat) not in exit:
-        input()
-    else:
-        break
-           
-    
+    greeting_responses = {'Credit': '*credit*',
+
+                          }
+
     def greeting(self):
         self.opening = input("Hello, I am your personal finance chatbot! What's your name?")
         print(f"Nice to meet you {self.opening}! What part of finance and investing are you interested in?.")
+
+    def quit(self):
+        allchat = input()
         
-        
-        
-    def end(self):
-        if input in exit:
-            print("Have a great day!")
-        return 
-    
-    
+        while allchat not in exit:
+            input()
+        else:
+            random.choice(exit_responses)
+
     def invest(self):
         if input == "*best stock today*":
             print(random.choice(index_funds))
-            
-    
-bot=Bot()
+
+
+bot = Bot()
+bot.quit()
