@@ -33,18 +33,25 @@ class Bot:
 
      
     def mainLoop(self):
-        while True:
+        token = True
+        while token == True:
                 
             if self.loopchat in self.greetings:
                 bot.greeting()
+                
+                
+            if self.opening >= "":
                 print(f"Nice to meet you {self.opening}! What part of finance and investing are you interested in?.")
-    
+                token == False
             
             if self.loopchat in self.exit:
                 bot.quit()
+                return
                 
-        else:
-            self.loopchat
+        if token == False:
+          
+                input("What is your credit score? ")
+                
                 
                        
 bot = Bot()
