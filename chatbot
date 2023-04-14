@@ -1,12 +1,11 @@
 import re
 import random
 
+
 class Bot:
-    
-    
+
     loopchat = input("Type Here: ")
-    
-    
+
     index_funds = ['SPY', 'NASDAQ', 'Dow Jones', 'Gold Select']
     credit_bureaus = ["Experian", "Transunion", "Equifax"]
     exit = ["Bye", "Goodbye", "See Ya", "Quit", "Exit", "End", "Stop"]
@@ -15,44 +14,47 @@ class Bot:
     test = {'Credit': '*credit*',
 
            }
-                         
-        
-    
 
     def greeting(self):
         self.opening = input("Hello, I am your personal finance chatbot! What's your name?")
-    
-    
+
+
     def quit(self):
         print(random.choice(self.exit_reponses))
-    
             
+
     def invest(self):
+
         if input == "*best stock today*":
             print(random.choice(index_funds))
+  
 
-     
     def mainLoop(self):
+
         token = True
+
         while token == True:
-                
+               
+
             if self.loopchat in self.greetings:
                 bot.greeting()
-                
-                
+               
+
             if self.opening >= "":
-                print(f"Nice to meet you {self.opening}! What part of finance and investing are you interested in?.")
-                token == False
-            
+                print(f"Nice to meet you {self.opening}! What part of finance or investing are you interested in?.")
+                token = input()
+         
+
             if self.loopchat in self.exit:
                 bot.quit()
                 return
-                
-        if token == False:
-          
-                input("What is your credit score? ")
-                
-                
-                       
+            
+        #Maybe make token == *credit* to prompt score reponse
+        if token >="": 
+
+            input("What is your credit score? ")
+
+                          
+
 bot = Bot()
 bot.mainLoop()
