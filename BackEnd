@@ -1,7 +1,3 @@
-import re
-import random
-
-
 class Bot:
 
     loopchat = input("Type Here: ")
@@ -30,24 +26,27 @@ class Bot:
   
 
     def mainLoop(self):
-
-        token = True
-
-        while token == True:
-               
-
+        const = True
+        open = ""
+        token = ""
+        
+        while const == True:
+            
             if self.loopchat in self.greetings:
                 bot.greeting()
-               
-
+                    
             if self.opening >= "":
-                print(f"Nice to meet you {self.opening}! What part of finance or investing are you interested in?.")
-                token = input()
-         
+                print(f"Nice to meet you {self.opening}! What part of finance or investing are you interested in?")
+            
+            if token != self.opening:
+                while True:
+                    token = input("What else would you like to talk about?")    
+                
 
-            if self.loopchat in self.exit:
+        if token in self.exit is True:
+                const = False
                 bot.quit()
-                return
+                
             
         #Maybe make token == *credit* to prompt score reponse
         if token >="": 
