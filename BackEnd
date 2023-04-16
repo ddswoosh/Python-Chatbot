@@ -5,9 +5,9 @@ import NumPy as np
 class Bot:
     
     #Class main var
-    loopchat = input("Type Here: ")
+    start = input("Type Here: ")
     opening = ""
-    token = ""
+    main = ""
     
     #Start/Stop var
     greetings = ["Hi", 'Hello', 'Hey there!']
@@ -17,7 +17,8 @@ class Bot:
     #Credit var and dict
     credit_bureaus = ["Experian", "Transunion", "Equifax"]
     credit = #key value score scale good 700
-    test = {credit : '*credit*',
+    
+    string_func = {credit : '*credit*',
 
            }
     #Investing var
@@ -35,27 +36,27 @@ class Bot:
             print(random.choice(index_funds))
     
     def allChat(self):
-        if self.token != self.opening:
+        if self.main != self.opening:
             while True:
-                self.token = input("What would you like to talk about? ")  
+                self.main = input("What would you like to talk about? ")  
 
     def mainLoop(self):
         const = True
         
         while const == True:
             
-            if self.token in self.exit:
+            if self.main in self.exit:
                 bot.quit()
             
-            if self.loopchat in self.greetings:
+            if self.start in self.greetings:
                 bot.greeting()
                 open = True
                 
-            elif self.loopchat not in self.greetings:
+            elif self.start not in self.greetings:
                 open = False
                 x = True
                 if x == True:
-                    self.token = input(random.choice(self.greetings))
+                    self.main = input(random.choice(self.greetings))
                     x = False
                 elif x == False:
                     return bot.mainLoop()
@@ -63,13 +64,13 @@ class Bot:
                 
             if self.opening >= "":
                 if open ==  True:
-                    self.token = input(f"Nice to meet you {self.opening}! What part of finance or investing are you interested in? ")
+                    self.main = input(f"Nice to meet you {self.opening}! What part of finance or investing are you interested in? ")
             
-            if self.token not in self.opening:
+            if self.main not in self.opening:
                 bot.allChat()    
                 
-        if self.token in "*credit*": 
-            self.token = input("What is your credit score? ")
+        if self.main in "*credit*": 
+            self.main = input("What is your credit score? ")
 
                           
 
