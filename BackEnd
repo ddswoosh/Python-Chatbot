@@ -45,10 +45,10 @@ class Bot:
                 
     def credit(self):
         self.credit_score = input("What is your credit score? ")
-            if self.credit_score in self.credit:
-                for key, value in sel.fcredit:
-                    if value in self.credit:
-                        print(credit[key])
+        if self.credit_score in self.credit:
+            for key, value in sel.fcredit:
+                if value in self.credit:
+                    print(credit[key])
                     
     def mainLoop(self):
         const = True
@@ -79,7 +79,7 @@ class Bot:
             if self.main not in self.opening:
                 bot.allChat()
                 
-            if self.main == "*credit*"
+            if self.main == "*credit*":
                 bot.credit()
                 
                           
