@@ -4,7 +4,7 @@ import re
 
 class Bot:
 
-    loopchat = input("Type Here: ")
+    start = input("Type Here: ")
     opening = ""
     token = ""
     
@@ -13,7 +13,8 @@ class Bot:
     exit = ["Bye", "Goodbye", "See Ya", "Quit", "Exit", "End", "Stop"]
     greetings = ["Hi", 'Hello', 'Hey there!']
     exit_reponses = ["Come back if you have more questions!","Have a great day!"]
-    test = {'Credit': '*credit*',
+    credit = #Matrix Var score scale
+    test = {credit: '*credit*',
 
            }
 
@@ -26,7 +27,6 @@ class Bot:
             
 
     def invest(self):
-
         if input == "*best stock today*":
             print(random.choice(index_funds))
     
@@ -40,11 +40,11 @@ class Bot:
         
         while const == True:
             
-            if self.loopchat in self.greetings:
+            if self.start in self.greetings:
                 bot.greeting()
                 open = True
                 
-            elif self.loopchat not in self.greetings:
+            elif self.start not in self.greetings:
                 open = False
                 x = True
                 if x == True:
