@@ -57,7 +57,8 @@ class Bot:
             
             if self.main or self.start in self.exit:
                 bot.quit()
-            
+                break
+                
             if self.start in self.greetings:
                 bot.greeting()
                 open = True
