@@ -1,7 +1,12 @@
+import random
+import re
+
+
 class Bot:
 
     loopchat = input("Type Here: ")
-
+    token = ""
+    
     index_funds = ['SPY', 'NASDAQ', 'Dow Jones', 'Gold Select']
     credit_bureaus = ["Experian", "Transunion", "Equifax"]
     exit = ["Bye", "Goodbye", "See Ya", "Quit", "Exit", "End", "Stop"]
@@ -12,7 +17,7 @@ class Bot:
            }
 
     def greeting(self):
-        self.opening = input("Hello, I am your personal finance chatbot! What's your name?")
+        self.opening = input("Hello, I am your personal finance chatbot! What's your name? ")
 
 
     def quit(self):
@@ -23,35 +28,45 @@ class Bot:
 
         if input == "*best stock today*":
             print(random.choice(index_funds))
-  
+    
+    def allChat(self):
+        if self.token != self.opening:
+            while True:
+                self.token = input("What else would you like to talk about? ")  
 
     def mainLoop(self):
         const = True
         open = ""
-        token = ""
         
         while const == True:
             
             if self.loopchat in self.greetings:
                 bot.greeting()
-                    
-            if self.opening >= "":
-                print(f"Nice to meet you {self.opening}! What part of finance or investing are you interested in?")
             
-            if token != self.opening:
+            if self.opening >= "":
+                input(f"Nice to meet you {self.opening}! What part of finance or investing are you interested in? ")
+            
+            if self.token != self.opening:
+                bot.allChat()
+                
+                
+            if self.loopchat != self.greetings:
                 while True:
-                    token = input("What else would you like to talk about?")    
+                    self.token = input(random.choice(self.greetings))
+                    
+                
+#             if token != self.opening:
+#                 while True:
+#                     token = input("What else would you like to talk about?")    
                 
 
-        if token in self.exit is True:
+        if self.token in self.exit:
                 const = False
                 bot.quit()
                 
-            
-        #Maybe make token == *credit* to prompt score reponse
-        if token >="": 
-
-            input("What is your credit score? ")
+    
+        if self.token in "*credit*": 
+            self.token = input("What is your credit score? ")
 
                           
 
