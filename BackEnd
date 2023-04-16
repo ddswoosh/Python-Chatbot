@@ -1,10 +1,10 @@
 import random
 import re
-
+import NumPy as np
 
 class Bot:
 
-    start = input("Type Here: ")
+    loopchat = input("Type Here: ")
     opening = ""
     token = ""
     
@@ -13,8 +13,7 @@ class Bot:
     exit = ["Bye", "Goodbye", "See Ya", "Quit", "Exit", "End", "Stop"]
     greetings = ["Hi", 'Hello', 'Hey there!']
     exit_reponses = ["Come back if you have more questions!","Have a great day!"]
-    credit = #Matrix Var score scale
-    test = {credit: '*credit*',
+    test = {'Credit': '*credit*',
 
            }
 
@@ -24,9 +23,11 @@ class Bot:
 
     def quit(self):
         print(random.choice(self.exit_reponses))
+        const = False
             
 
     def invest(self):
+
         if input == "*best stock today*":
             print(random.choice(index_funds))
     
@@ -40,11 +41,14 @@ class Bot:
         
         while const == True:
             
-            if self.start in self.greetings:
+            if self.token in self.exit:
+                bot.quit()
+            
+            if self.loopchat in self.greetings:
                 bot.greeting()
                 open = True
                 
-            elif self.start not in self.greetings:
+            elif self.loopchat not in self.greetings:
                 open = False
                 x = True
                 if x == True:
@@ -60,14 +64,7 @@ class Bot:
             
             if self.token not in self.opening:
                 bot.allChat()    
-
-
-        if self.token in self.exit:
-                bot.quit()
-                const = False
-            
                 
-    
         if self.token in "*credit*": 
             self.token = input("What is your credit score? ")
 
