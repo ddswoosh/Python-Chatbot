@@ -1,6 +1,5 @@
 import random
 import re
-import NumPy as np
 
 class Bot:
     
@@ -16,7 +15,9 @@ class Bot:
     
     #Credit var and dict
     credit_bureaus = ["Experian", "Transunion", "Equifax"]
-    credit = #key value score scale good 700
+    credit = {Excellent : list(range(750,851)), Good : list(range(700,750)), 
+              Average : list(range(620,700)), Below Average : list(range(600,620)),
+             Bad : list(range(0,600))}
     
     string_func = {credit : '*credit*',
 
