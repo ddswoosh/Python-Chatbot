@@ -44,12 +44,11 @@ class Bot:
                 self.main = input("What would you like to talk about? ")  
                 
     def credit(self):
-        if self.main "*credit*":
-            self.credit_score = input("What is your credit score? ")
-                if self.credit_score in self.credit:
-                    for key, value in sel.fcredit:
-                        if value in self.credit:
-                            print(credit[key])
+        self.credit_score = input("What is your credit score? ")
+            if self.credit_score in self.credit:
+                for key, value in sel.fcredit:
+                    if value in self.credit:
+                        print(credit[key])
                     
     def mainLoop(self):
         const = True
@@ -78,7 +77,10 @@ class Bot:
                     self.main = input(f"Nice to meet you {self.opening}! What part of finance or investing are you interested in? ")
             
             if self.main not in self.opening:
-                bot.allChat()    
+                bot.allChat()
+                
+            if self.main == "*credit*"
+                bot.credit()
                 
                           
 
