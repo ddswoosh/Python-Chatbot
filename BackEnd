@@ -3,31 +3,34 @@ import re
 import NumPy as np
 
 class Bot:
-
+    
+    #Class main var
     loopchat = input("Type Here: ")
     opening = ""
     token = ""
     
-    index_funds = ['SPY', 'NASDAQ', 'Dow Jones', 'Gold Select']
-    credit_bureaus = ["Experian", "Transunion", "Equifax"]
-    exit = ["Bye", "Goodbye", "See Ya", "Quit", "Exit", "End", "Stop"]
+    #Start/Stop var
     greetings = ["Hi", 'Hello', 'Hey there!']
+    exit = ["Bye", "Goodbye", "See Ya", "Quit", "Exit", "End", "Stop"]
     exit_reponses = ["Come back if you have more questions!","Have a great day!"]
-    test = {'Credit': '*credit*',
+    
+    #Credit var and dict
+    credit_bureaus = ["Experian", "Transunion", "Equifax"]
+    credit = #key value score scale good 700
+    test = {credit : '*credit*',
 
            }
+    #Investing var
+    index_funds = ['SPY', 'NASDAQ', 'Dow Jones', 'Gold Select']
 
     def greeting(self):
         self.opening = input("Hello, I am your personal finance chatbot! What's your name? ")
-
 
     def quit(self):
         print(random.choice(self.exit_reponses))
         const = False
             
-
     def invest(self):
-
         if input == "*best stock today*":
             print(random.choice(index_funds))
     
