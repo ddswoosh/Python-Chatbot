@@ -22,9 +22,9 @@ class Bot:
             "Bad" : list(range(0,600))
              }
     
-    string_func = {credit : '*credit*',
+#     string_func = {credit : '*credit*'
 
-           }
+#                    }
     #Investing var
     index_funds = ['SPY', 'NASDAQ', 'Dow Jones', 'Gold Select']
 
@@ -55,7 +55,7 @@ class Bot:
         
         while const == True:
             
-            if self.main in self.exit:
+            if self.main or self.start in self.exit:
                 bot.quit()
             
             if self.start in self.greetings:
