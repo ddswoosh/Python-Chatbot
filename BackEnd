@@ -46,22 +46,17 @@ class Bot:
             elif self.loopchat not in self.greetings:
                 x = True
                 if x == True:
-                    input(random.choice(self.greetings))
+                    self.token = input(random.choice(self.greetings))
                     x = False
                 elif x == False:
                     return bot.mainLoop()
                     
                 
             if self.opening >= "":
-                input(f"Nice to meet you {self.opening}! What part of finance or investing are you interested in? ")
+                self.token = input(f"Nice to meet you {self.opening}! What part of finance or investing are you interested in? ")
             
-            # if self.token != self.opening:
-            #     bot.allChat()
-                
-                
-#             if token != self.opening:
-#                 while True:
-#                     token = input("What else would you like to talk about?")    
+            if self.token not in self.opening:
+                bot.allChat()    
 
 
         if self.token in self.exit:
