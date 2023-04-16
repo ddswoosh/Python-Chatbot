@@ -45,12 +45,12 @@ class Bot:
                 self.main = input("What would you like to talk about? ")  
                 
     def credit(self):
-            if self.token "*credit*":
-                self.credit_score = input("What is your credit score? ")
-                    if self.credit_score in self.credit:
-                        for key, value in sel.fcredit:
-                            if value in self.credit:
-                                print(credit[key])
+        if self.token "*credit*":
+            self.credit_score = input("What is your credit score? ")
+                if self.credit_score in self.credit:
+                    for key, value in sel.fcredit:
+                        if value in self.credit:
+                            print(credit[key])
                     
     def mainLoop(self):
         const = True
