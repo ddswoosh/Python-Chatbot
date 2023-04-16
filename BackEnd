@@ -7,6 +7,7 @@ class Bot:
     start = input("Type Here: ")
     opening = ""
     main = ""
+    credit_score = ""
     
     #Start/Stop var
     greetings = ["Hi", 'Hello', 'Hey there!']
@@ -15,9 +16,11 @@ class Bot:
     
     #Credit var and dict
     credit_bureaus = ["Experian", "Transunion", "Equifax"]
-    credit = {Excellent : list(range(750,851)), Good : list(range(700,750)), 
-              Average : list(range(620,700)), Below Average : list(range(600,620)),
-             Bad : list(range(0,600))}
+    credit = {
+            Excellent : list(range(750,851)), Good : list(range(700,750)), 
+            Average : list(range(620,700)), Below Average : list(range(600,620)),
+            Bad : list(range(0,600))
+             }
     
     string_func = {credit : '*credit*',
 
@@ -40,7 +43,15 @@ class Bot:
         if self.main != self.opening:
             while True:
                 self.main = input("What would you like to talk about? ")  
-
+                
+    def credit(self):
+            if self.token "*credit*":
+                self.credit_score = input("What is your credit score? ")
+                    if self.credit_score in self.credit:
+                        for key, value in sel.fcredit:
+                            if value in self.credit:
+                                print(credit[key])
+                    
     def mainLoop(self):
         const = True
         
@@ -70,9 +81,6 @@ class Bot:
             if self.main not in self.opening:
                 bot.allChat()    
                 
-        if self.main in "*credit*": 
-            self.main = input("What is your credit score? ")
-
                           
 
 bot = Bot()
