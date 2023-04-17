@@ -1,3 +1,4 @@
+#Maybe make all functions in mainloop return mainloop so it rechecks all statements
 import random
 import re
 
@@ -37,17 +38,17 @@ class Bot:
         self.end = True
             
     def invest(self):
-        if input == "*best stock today*":
+        if input == "*best investment*":
             print(random.choice(index_funds))
     
     def allChat(self):
             while True:
                 self.main = input("What would you like to talk about? ")  
                 
-    def credit(self):
+    def creditRating(self):
         self.credit_score = input("What is your credit score? ")
         if self.credit_score in self.credit:
-            for key, value in sel.fcredit:
+            for key, value in self.credit:
                 if value in self.credit:
                     print(credit[key])
                     
