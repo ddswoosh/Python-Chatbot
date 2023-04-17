@@ -8,6 +8,7 @@ class Bot:
     opening = ""
     main = ""
     credit_score = ""
+    end = False
     
     #Start/Stop var
     greetings = ["Hi", 'Hello', 'Hey there!']
@@ -33,7 +34,7 @@ class Bot:
 
     def quit(self):
         print(random.choice(self.exit_reponses))
-        const = False
+        self.end = True
             
     def invest(self):
         if input == "*best stock today*":
@@ -51,9 +52,9 @@ class Bot:
                     print(credit[key])
                     
     def mainLoop(self):
-        const = True
+        self.const = True
         
-        while const == True:
+        while self.const == True:
             
             if self.main or self.start in self.exit:
                 bot.quit()
@@ -75,7 +76,8 @@ class Bot:
                 
             if self.opening >= "":
                 if open ==  True:
-                    self.main = input(f"Nice to meet you {self.opening}! What part of finance or investing are you interested in? ")
+                    if self.end == False:
+                        self.main = input(f"Nice to meet you {self.opening}! What part of finance or investing are you interested in? ")
             
             if self.main not in self.opening:
                 bot.allChat()
