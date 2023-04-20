@@ -11,4 +11,6 @@
 
 -The user database will be ran on either mySQL or Microsoft SQL. This part allows each user to be identified and have chat logs saved. This will increase the bots accuracy as we will have previous information stored behind a username and password.
 
+-Financial based forums will be scraped, parsed and placed into a database for machine learning and training purposes.
+
 (Backend is currently being worked on, I will update this section once I move on to different sections)
