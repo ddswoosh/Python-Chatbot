@@ -1,13 +1,14 @@
-#Maybe make all functions in mainloop return mainloop so it rechecks all statements
+# Maybe make all functions in mainloop return mainloop so it rechecks all statements
 import random
 import re
 import requests
-from bs4 import BeautifulSoup
+# from bs4 import BeautifulSoup
+
 
 class Bot:
 
     def __init__(self):
-        #Class main var
+        # Class main var
         self.start = input("Type Here: ")
         self.beginning_loop = True
         self.opening = []
@@ -15,24 +16,24 @@ class Bot:
         self.main = []
         self.credit_score = []
         self.end = False
-    
-        #Start/Stop var
+
+        # Start/Stop var
         self.greetings = ["Hi", 'Hello', 'Hey there!']
         self.exit = ["Bye", "Goodbye", "See Ya", "Quit", "Exit", "End", "Stop"]
-        self.exit_reponses = ["Come back if you have more questions!","Have a great day!"]
-    
-        #Credit var and dict
+        self.exit_reponses = ["Come back if you have more questions!", "Have a great day!"]
+
+        # Credit var and dict
         self.credit_bureaus = ["Experian", "Transunion", "Equifax"]
         self.credit = {
-                "Excellent" : (750,851), "Good" : (700,750), 
-                "Average" : (620,700), "Below Average" : (600,620),
-                "Bad" : (0,600)
-                 }
-    
-    #     string_func = {credit : '*credit*'
+            "Excellent": (750, 851), "Good": (700, 750),
+            "Average": (620, 700), "Below Average": (600, 620),
+            "Bad": (0, 600)
+        }
 
-    #                    }
-        #Investing var
+        #     string_func = {credit : '*credit*'
+
+        #                    }
+        # Investing var
         self.index_funds = ['SPY', 'NASDAQ', 'Dow Jones', 'Gold Select']
 
     def greeting(self):
@@ -41,50 +42,51 @@ class Bot:
     def quit(self):
         print(random.choice(self.exit_reponses))
         self.end = True
-            
+
     def invest(self):
-        print(random.choice(index_funds))
-    
+        print(random.choice(self.index_funds))
+
     def allChat(self):
         while True:
-            self.main = input("What would you like to talk about? ")  
-                
+            self.main = input("What would you like to talk about? ")
+
     def creditRating(self):
         self.credit_score = input("What is your credit score? ")
         for key, value in self.credit:
             if int(self.credit_score) in value:
                 print(key)
-                        
-                    
+
     def startLoop(self):
         while self.beginning_loop == True:
-            
+
             if self.start in self.exit:
                 bot.quit()
                 break
-                
+
             if self.start in self.greetings:
                 bot.greeting()
                 func = True
-                
+
             elif self.start not in self.greetings:
                 func = False
                 x = True
-                
+
                 if x == True:
                     self.main = input(random.choice(self.greetings))
                     x = False
+
                 elif x == False:
                     self.beginning == False
-                    return bot.mainLoop()      
-                
+                    return bot.mainLoop()
+
             if self.opening in self.exit:
                 bot.quit()
                 break
             else:
                 if func == True:
-                    self.meeting = input(f"Nice to meet you {self.opening}! What part of finance or investing are you interested in? ")
-            
+                    self.meeting = input(
+                        f"Nice to meet you {self.opening}! What part of finance or investing are you interested in? ")
+
             if self.meeting not in self.opening:
                 if self.meeting in self.exit:
                     bot.quit()
@@ -92,17 +94,15 @@ class Bot:
                 else:
                     self.beginning = False
                     bot.mainLoop()
-                    
-                    
+
     def mainLoop(self):
         if self.beginning == False:
             while True:
                 if "credit" in self.main:
                     bot.creditRating()
                 else:
-                    self.main = input("What would you like to talk about? ") 
-                
-                          
+                    self.main = input("What would you like to talk about? ")
+
 
 bot = Bot()
 bot.startLoop()
