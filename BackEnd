@@ -1,6 +1,8 @@
 #Maybe make all functions in mainloop return mainloop so it rechecks all statements
 import random
 import re
+import requests
+from bs4 import BeautifulSoup
 
 class Bot:
 
