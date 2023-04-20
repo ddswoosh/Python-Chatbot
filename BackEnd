@@ -57,7 +57,7 @@ class Bot:
         
         while self.const == True:
             
-            if self.main or self.start in self.exit:
+            if self.start in self.exit:
                 bot.quit()
                 break
                 
@@ -68,6 +68,7 @@ class Bot:
             elif self.start not in self.greetings:
                 open = False
                 x = True
+                
                 if x == True:
                     self.main = input(random.choice(self.greetings))
                     x = False
@@ -75,13 +76,19 @@ class Bot:
                     return bot.mainLoop()
                     
                 
-            if self.opening >= "":
+            if self.opening in self.exit:
+                bot.quit()
+                break
+            else:
                 if open ==  True:
-                    if self.end == False:
-                        self.main = input(f"Nice to meet you {self.opening}! What part of finance or investing are you interested in? ")
+                    self.main = input(f"Nice to meet you {self.opening}! What part of finance or investing are you interested in? ")
             
             if self.main not in self.opening:
-                bot.allChat()
+                if self.main in self.exit:
+                    bot.quit()
+                    break
+                else:
+                    bot.allChat()
                 
             if self.main == "*credit*":
                 bot.credit()
