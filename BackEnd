@@ -3,34 +3,35 @@ import random
 import re
 
 class Bot:
-    
-    #Class main var
-    start = input("Type Here: ")
-    beginning_loop = True
-    opening = []
-    meeting = []
-    main = []
-    credit_score = []
-    end = False
-    
-    #Start/Stop var
-    greetings = ["Hi", 'Hello', 'Hey there!']
-    exit = ["Bye", "Goodbye", "See Ya", "Quit", "Exit", "End", "Stop"]
-    exit_reponses = ["Come back if you have more questions!","Have a great day!"]
-    
-    #Credit var and dict
-    credit_bureaus = ["Experian", "Transunion", "Equifax"]
-    credit = {
-            "Excellent" : range(750,851), "Good" : range(700,750), 
-            "Average" : range(620,700), "Below Average" : range(600,620),
-            "Bad" : range(0,600)
-             }
-    
-#     string_func = {credit : '*credit*'
 
-#                    }
-    #Investing var
-    index_funds = ['SPY', 'NASDAQ', 'Dow Jones', 'Gold Select']
+    def __init__(self):
+        #Class main var
+        self.start = input("Type Here: ")
+        self.beginning_loop = True
+        self.opening = []
+        self.meeting = []
+        self.main = []
+        self.credit_score = []
+        self.end = False
+    
+        #Start/Stop var
+        self.greetings = ["Hi", 'Hello', 'Hey there!']
+        self.exit = ["Bye", "Goodbye", "See Ya", "Quit", "Exit", "End", "Stop"]
+        self.exit_reponses = ["Come back if you have more questions!","Have a great day!"]
+    
+        #Credit var and dict
+        self.credit_bureaus = ["Experian", "Transunion", "Equifax"]
+        self.credit = {
+                "Excellent" : (750,851), "Good" : (700,750), 
+                "Average" : (620,700), "Below Average" : (600,620),
+                "Bad" : (0,600)
+                 }
+    
+    #     string_func = {credit : '*credit*'
+
+    #                    }
+        #Investing var
+        self.index_funds = ['SPY', 'NASDAQ', 'Dow Jones', 'Gold Select']
 
     def greeting(self):
         self.opening = input("Hello, I am your personal finance chatbot! What's your name? ")
