@@ -73,6 +73,7 @@ class Bot:
                     self.main = input(random.choice(self.greetings))
                     x = False
                 elif x == False:
+                    self.beginning == False
                     return bot.mainLoop()      
                 
             if self.opening in self.exit:
