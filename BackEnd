@@ -23,11 +23,14 @@ class Bot:
         self.exit_reponses = ["Come back if you have more questions!", "Have a great day!"]
 
         # Credit var and dict
+        self.precr = True
         self.credit_bureaus = ["Experian", "Transunion", "Equifax"]
         self.credit = {
-            "Excellent": str(range(750,851)), "Good": (700, 750),
-            "Average": (620, 700), "Below Average": (600, 620),
-            "Bad": (0, 600)
+            "Excellent": list(range(750,851)),
+            "Good": list(range(700, 750)),
+            "Average": list(range(620, 700)),
+            "Below Average": list(range(600, 620)),
+            "Bad": list(range(0, 600))
         }
 
         #     string_func = {credit : '*credit*'
@@ -54,9 +57,11 @@ class Bot:
 
     def creditRating(self):
         self.credit_score = input("What is your credit score? ")
-        for key, value in self.credit:
+        for key, value in self.credit.items():
             if int(self.credit_score) in value:
-                return key[0]
+                print(key)
+                self.precr = False
+                return bot.mainLoop()
 
 # Intitalizing loop where we learn about the user and store data to be used at a later date
 # In each case we check if the input ever equals any exit queues which will break the loop and terminate the bot entirely
@@ -105,7 +110,7 @@ class Bot:
     def mainLoop(self):
         if self.beginning == False:
             while True:
-                if "credit" in self.main:
+                if "credit" in self.main and self.precr == True:
                     bot.creditRating()
                 else:
                     self.main = input("What would you like to talk about? ")
