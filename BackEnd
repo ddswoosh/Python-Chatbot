@@ -25,7 +25,7 @@ class Bot:
         # Credit var and dict
         self.credit_bureaus = ["Experian", "Transunion", "Equifax"]
         self.credit = {
-            "Excellent": (750, 851), "Good": (700, 750),
+            "Excellent": str(range(750,851)), "Good": (700, 750),
             "Average": (620, 700), "Below Average": (600, 620),
             "Bad": (0, 600)
         }
@@ -56,7 +56,7 @@ class Bot:
         self.credit_score = input("What is your credit score? ")
         for key, value in self.credit:
             if int(self.credit_score) in value:
-                print(key)
+                return key[0]
 
 # Intitalizing loop where we learn about the user and store data to be used at a later date
 # In each case we check if the input ever equals any exit queues which will break the loop and terminate the bot entirely
