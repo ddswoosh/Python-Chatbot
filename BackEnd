@@ -62,6 +62,9 @@ class Bot:
                 print(key)
                 self.precr = False
                 return bot.mainLoop()
+            elif self.credit_score < str(0) > str(850):
+                print("Out of FICO range ")
+                return bot.mainLoop()
 
 # Intitalizing loop where we learn about the user and store data to be used at a later date
 # In each case we check if the input ever equals any exit queues which will break the loop and terminate the bot entirely
