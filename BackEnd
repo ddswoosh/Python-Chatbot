@@ -1,7 +1,7 @@
 # Maybe make all functions in mainloop return mainloop so it rechecks all statements
 import random
-import re
-import requests
+# import re
+# import requests
 # from bs4 import BeautifulSoup
 
 
@@ -50,11 +50,16 @@ class Bot:
         while True:
             self.main = input("What would you like to talk about? ")
 
+# We will run the input score against the iteration of the credit key, value dictionary, if we find the value we return the key
+
     def creditRating(self):
         self.credit_score = input("What is your credit score? ")
         for key, value in self.credit:
             if int(self.credit_score) in value:
                 print(key)
+
+# Intitalizing loop where we learn about the user and store data to be used at a later date
+# In each case we check if the input ever equals any exit queues which will break the loop and terminate the bot entirely
 
     def startLoop(self):
         while self.beginning_loop == True:
@@ -94,6 +99,8 @@ class Bot:
                 else:
                     self.beginning = False
                     bot.mainLoop()
+
+# After the inital loop is ran through, it will be directed to this mainLoop method which will be present for the rest of the chat log
 
     def mainLoop(self):
         if self.beginning == False:
