@@ -13,7 +13,8 @@ formatted = doc.prettify()
 
 string = doc.find_all("p")
 
-print(string)
-
 #Format replies and responses in a table as a CSV so we can import to a sql database
-
+tags = []
+for tag in enumerate(string):
+    tags = tag
+print(list(tags))
