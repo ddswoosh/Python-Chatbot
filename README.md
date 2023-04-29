@@ -5,11 +5,10 @@
 
 -As I learn more about machine learning and AI, I will be gradually adding more learning based functions to the bot
 
--There are numerous files to go along with this project. The backend will be coded in base Python, using some libraries such as random and re
+-There are numerous files to go along with this project as it is a full stack application. 
+  -The backend is coded in python using some libraries
+  -To allow executable html, we will be using pyscript to link our backend
+  -The key : value database will be located in a microsoftSQL server using the sqlite3 library for interaction
+  -Natural language processing will be rolled out later into the project
 
--The frontend will be coded with either pyscript or dash
-
--The user database will be ran on either mySQL or Microsoft SQL. This part allows each user to be identified and have chat logs saved. This will increase the bots accuracy as we will have previous information stored behind a username and password.
-
--Financial based forums will be scraped, parsed and placed into a database for machine learning and training purposes.
-
+-Financial based forums will be scraped, parsed and placed into the database for machine learning and training purposes.
