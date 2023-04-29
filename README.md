@@ -13,4 +13,3 @@
 
 -Financial based forums will be scraped, parsed and placed into a database for machine learning and training purposes.
 
-(Backend is currently being worked on, I will update this section once I move on to different sections)
