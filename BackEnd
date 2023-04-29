@@ -45,10 +45,6 @@ class Bot:
     def invest(self):
         print(random.choice(self.index_funds))
 
-    def allChat(self):
-        while True:
-            self.main = input("What would you like to talk about? ")
-
 # We will run the input score against the iteration of the credit key, value dictionary, if we find the value we return the key
 
     def creditRating(self):
@@ -85,18 +81,21 @@ class Bot:
                     x = False
 
                 elif x == False:
-                    self.beginning == False
-                    return bot.mainLoop()
+                    if self.main not in self.exit:
+                        self.beginning = False
+                        return bot.mainLoop()
 
             if self.opening in self.exit:
                 bot.quit()
                 break
             else:
                 if func == True:
-                    self.meeting = input(
-                        f"Nice to meet you {self.opening}! What part of finance or investing are you interested in? ")
-
-            if self.meeting not in self.opening:
+                    self.meeting = input(f"Nice to meet you {self.opening}! What part of finance or investing are you interested in? ")
+                    
+            if "credit" in self.meeting:
+                bot.creditRating()
+                
+            elif self.meeting not in self.opening:
                 if self.meeting in self.exit:
                     bot.quit()
                     break
@@ -112,7 +111,8 @@ class Bot:
                 if "credit" in self.main and self.precr == True:
                     bot.creditRating()
                 else:
-                    self.main = input("What would you like to talk about? ")
+                    while self.end == False:
+                        self.main = input("What would you like to talk about? ")
 
 
 bot = Bot()
