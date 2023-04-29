@@ -9,7 +9,7 @@
 
   -The backend is coded in python using some libraries
   
-  -To allow executable html, we will be using pyscript to link our backend
+  -To allow an executable frontend, we will be using pyscript to link our backend
   
   -The key : value database will be located in a microsoftSQL server using the sqlite3 library for interaction
   
