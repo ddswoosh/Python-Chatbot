@@ -1,10 +1,28 @@
 # ChatBot
-Rule based chatbot coded in python 3. This is project is currently in progress and code will be updated in real time
+Rule based chatbot coded in python 3. This is project is currently in progress and code will be updated in real time.
 
-As I learn more about machine learning and AI, I will be gradually adding more learning based functions to the bot. There are numerous files to go along with this project as it is a full stack application
+# Quick-Start
 
-The backend is coded in python using some libraries. To allow an executable frontend, we will be using pyscript to link our backend. A restful API will be created for authentication purposes where username and password will be stored as a key value pair with a unique ID as the primary key. This key will be linked as a foreign key in another table that will store the users personal variables such as credit score, debts, etc. The databse will be hosted using Microsoft SQL Server.
-  
-Natural language processing will be rolled out later into the project
+Front end has a similar feel to Chat-GPT but is soley focused on finance. This is a machine learning heavy project so we will involve a lot of web scraping to obtain live data.
 
-Financial based forums will be scraped, parsed and placed into the database for machine learning and training purposes.
+This project is done 90% in Python (Base and Libraries). The other 10% is Microsoft SQL for its relational database ease of use, and the Flask framework for building our Restful API.
+
+Natural Language Processing and Pytorch training will be rolling out as the project progresses.
+
+# Tech-Stack
+
+* Python 3 (Base)
+* Pytorch
+* Requests
+* Re
+* Random
+* Pandas
+* Bs4
+* Flask
+* Pyscript
+* Sqlite3
+* Microsoft SQL Suite (MSQL Server, SSIS, SSMS)
+* Desktop App built with C++ using .Net **Not close to this but will be the very end of the project**
+
+
+This is a solo project
