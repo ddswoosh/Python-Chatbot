@@ -1,5 +1,5 @@
 # ChatBot
-Rule based chatbot coded in python 3. This is project is currently in progress and code will be updated in real time.
+Rule based/Machine Learning chatbot coded in python 3. This is project is currently in progress and code will be updated in real time.
 
 # Quick-Start
 
