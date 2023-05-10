@@ -20,7 +20,7 @@ Natural Language Processing and Pytorch training will be rolling out as the proj
 * Bs4
 * Flask
 * Pyscript
-* Sqlite3
+* Pyodbc
 * Microsoft SQL Suite (MSQL Server, SSIS, SSMS)
 * Desktop App built with C++ using .Net **Not close to this but will be the very end of the project**
 
