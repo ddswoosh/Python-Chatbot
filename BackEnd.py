@@ -58,7 +58,7 @@ class Bot:
                 print("Error: Out of FICO range ")
                 return bot.mainLoop()
 
-# Intitalizing loop where we learn about the user and store data to be used at a later date
+# Intitalizing variables that will later be linked to user ID and stored in a SQL database
 # In each case we check if the input ever equals any exit queues which will break the loop and terminate the bot entirely
 
     def startLoop(self):
