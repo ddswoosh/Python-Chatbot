@@ -5,7 +5,7 @@ Rule based/Machine Learning chatbot coded in python 3. This is project is curren
 
 Front end has a similar feel to Chat-GPT but is soley focused on finance. This is a machine learning heavy project so we will involve a lot of web scraping to obtain live data.
 
-This project is done 90% in Python (Base and Libraries). The other 10% is Microsoft SQL for its relational database ease of use, and the Flask framework for building our Restful API.
+This project is done 90% in Python (Base and Libraries). The other 10% is Microsoft SQL for its relational database ease of use, and the pyodbc library for API authentication purposes.
 
 Natural Language Processing and Pytorch training will be rolling out as the project progresses.
 
