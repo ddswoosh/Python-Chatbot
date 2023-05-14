@@ -22,11 +22,11 @@ class Bot:
         self.precr = True
         self.credit_bureaus = ["Experian", "Transunion", "Equifax"]
         self.credit = {
-            "Excellent credit! ": list(range(750,851)),
-            "Good credit! ": list(range(700, 750)),
-            "Average credit. ": list(range(620, 700)),
-            "Below Average credit. ": list(range(600, 620)),
-            "Bad credit. ": list(range(300, 600))
+            "Excellent credit! I have stored your credit score for later. ": list(range(750,851)),
+            "Good credit! I have stored your credit score for later. ": list(range(700, 750)),
+            "Average credit. I have stored your credit score for later. ": list(range(620, 700)),
+            "Below Average credit. I have stored your credit score for later. ": list(range(600, 620)),
+            "Bad credit. I have stored your credit score for later. ": list(range(300, 600))
         }
 
         #     string_func = {credit : '*credit*'
@@ -53,12 +53,14 @@ class Bot:
             if int(self.credit_score) in value:
                 print(key)
                 self.precr = False
+                self.beginning = False
                 return bot.mainLoop()
+            
             elif self.credit_score < str(300) or self.credit_score > str(850):
                 print("Error: Out of FICO range ")
                 return bot.mainLoop()
 
-# Intitalizing variables that will later be linked to user ID and stored in a SQL database
+# Intitalizing loop where we learn about the user and store data to be used at a later date
 # In each case we check if the input ever equals any exit queues which will break the loop and terminate the bot entirely
 
     def startLoop(self):
@@ -88,10 +90,11 @@ class Bot:
             if self.opening in self.exit:
                 bot.quit()
                 break
-            else:
-                if func == True:
-                    self.meeting = input(f"Nice to meet you {self.opening}! What part of finance or investing are you interested in? ")
-                    
+                
+            if func == True:
+                func == False
+                self.meeting = input(f"Nice to meet you {self.opening}! What part of finance or investing are you interested in? ")
+                     
             if "credit" in self.meeting:
                 bot.creditRating()
                 
