@@ -1,54 +1,59 @@
-import sqlite3
+import pyodbc
 
+connection_string = ("Driver={SQL Server}; Server=PC\SQLEXPRESS;Database=nc_auth;trusted_connetion=Yes;")
+
+conn = pyodbc.connect(connection_string)
+cur = conn.cursor()
+
+data = cur.execute("SELECT * FROM User_auth")
+        
 class Data:
     
     def __init__(self):
         
-        self.head = None
+        self.head = int(1)
         self.current_node = self.head
-        self.next = None
+        self.next = self.current_node + int(1)
 
-        self.username = #input(pyscript.js)
-        self.password = #input(pyscript.js)
+#         self.username = #input(pyscript.js)
+#         self.password = #input(pyscript.js)
         self.auth = False
     
     def firstNode(self):
-        if self.head == None
-            self.head = int(1)
-            #sql insert self.head into column 1
-            nextNode()
+        if self.auth == False:
+            if self.current_node == self.head:
+                con.execute(f"INSERT INTO (ID,Username,Password) VALUES ({self.current_node},{self.username},{self.password}")
+                self.auth = True
+            else:
+                d.secondNode()
              
     def secondNode(self):
-        if self.current_node == self.head
-            self.current_node = self.head + int(1)
-            #sql inset self.current_node into column 1
-            currentNode()
+        if self.auth == False:
+            if self.current_node == self.head:
+                self.current_node = self.next
+                con.execute(f"INSERT INTO (ID) VALUES ({self.next},{self.username},{self.password}")
+                self.auth = True
+            else:
+                d.nextNode()
                
-    def currentNode(self):
-        self.current_node = self.current_node + int(1)
-        #sql insert self.current_node into column 1
+    def nextNode(self):
+        if self.auth == False:
+            if self.current_node == self.next:
+                self.next = self.next + int(5)
+                con.execute(f"INSERT INTO (ID) VALUES ({self.next},{self.username},{self.password}")
+                self.auth = True
+            else:
+                d.auth()
         
     def auth(self):
-        if self.username in sqldb
-        {
-            SELECT username
-            FROM sqldb.table
-            WHERE username == username 
-        }
-            if self.password in sqldb
-            {
-                SELECT password
-                FROM sqldb.table
-                WHERE password == password
-            }
-                return sqldb
-                {
-                    SELECT id
-                    FROM sqldb.table
-                    WHERE self.username == username AND self.password == password
-                }
-        else:
-            #sql insert self.username into column 2
-            #sql inset self.password into column 3
-            firstNode()
+        if self.username in data:
+            if self.password in data:
+                done = con.execute(f"SELECT ID FROM User_auth WHERE Username = {self.username} AND Password = {self.password}")
+                return done and self.auth = True
 
+        else:
+            js.alert = print("Authorization Error")
+
+        
+d = Data()
+d.firstNode()
