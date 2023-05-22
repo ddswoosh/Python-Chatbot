@@ -27,7 +27,7 @@ class Data:
              
     def nextNode(self):
         self.current_node = self.next 
-        con.execute(f"INSERT INTO (ID) VALUES ({self.next},{self.username},{self.password})")
+        con.execute(f"INSERT INTO (ID) VALUES ({self.current_node},{self.username},{self.password})")
         self.auth = True
 
     def auth(self):
