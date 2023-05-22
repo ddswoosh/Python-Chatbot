@@ -25,8 +25,8 @@ class Bot:
             "Excellent credit! I have stored your credit score for later. ": list(range(750,851)),
             "Good credit! I have stored your credit score for later. ": list(range(700, 750)),
             "Average credit. I have stored your credit score for later. ": list(range(620, 700)),
-            "Below Average credit. I have stored your credit score for later. ": list(range(600, 620)),
-            "Bad credit. I have stored your credit score for later. ": list(range(300, 600))
+            "Below Average credit. I have stored your credit score for later. ": list(range(500, 620)),
+            "Bad credit. I have stored your credit score for later. ": list(range(300, 500))
         }
 
         #     string_func = {credit : '*credit*'
