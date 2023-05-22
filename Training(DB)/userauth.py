@@ -1,3 +1,4 @@
+from Backend import Bot
 import pyodbc
 
 connection_string = ("Driver={SQL Server}; Server=PC\SQLEXPRESS;Database=nc_auth;trusted_connetion=Yes;")
@@ -17,34 +18,18 @@ class Data:
 
 #         self.username = #input(pyscript.js)
 #         self.password = #input(pyscript.js)
-        self.auth = False
+        self.auth = "attempt"
     
     def firstNode(self):
-        if self.auth == False:
-            if self.current_node == self.head:
-                con.execute(f"INSERT INTO (ID,Username,Password) VALUES ({self.current_node},{self.username},{self.password}")
-                self.auth = True
-            else:
-                d.secondNode()
+        con.execute(f"INSERT INTO (ID,Username,Password) VALUES ({self.current_node},{self.username},{self.password})")
+        self.current_node = self.next
+        self.auth = True
              
-    def secondNode(self):
-        if self.auth == False:
-            if self.current_node == self.head:
-                self.current_node = self.next
-                con.execute(f"INSERT INTO (ID) VALUES ({self.next},{self.username},{self.password}")
-                self.auth = True
-            else:
-                d.nextNode()
-               
     def nextNode(self):
-        if self.auth == False:
-            if self.current_node == self.next:
-                self.next = self.next + int(5)
-                con.execute(f"INSERT INTO (ID) VALUES ({self.next},{self.username},{self.password}")
-                self.auth = True
-            else:
-                d.auth()
-        
+        self.current_node = self.next 
+        con.execute(f"INSERT INTO (ID) VALUES ({self.next},{self.username},{self.password})")
+        self.auth = True
+
     def auth(self):
         if self.username in data:
             if self.password in data:
@@ -52,8 +37,30 @@ class Data:
                 return done and self.auth = True
 
         else:
+            self.auth = False
             js.alert = print("Authorization Error")
-
+                      
+            
+    def run(self):
+        if self.auth == "attempt":    
+            d.auth()
         
+        elif self.auth == False:
+            if self.current_node == self.head:
+                d.firstNode()
+            elif self.current_node == self.next:
+                d.nextNode()
+        
+    def storeVar(self):
+        if self.auth == True:
+            con.execute(f"SELECT * FROM User_data WHERE ID = {self.current_node}")
+        
+                   
 d = Data()
-d.firstNode()
+d.run()
+
+
+
+#imported bot class from backend file and will link together to store variables such as credit score in database
+#all username and passwords auths will be given a unique ID and this will be the primary key of the auththenication databse
+#while being the foreign key in the user data database so we can access it at anytime after auth
