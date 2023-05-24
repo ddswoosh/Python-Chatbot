@@ -25,8 +25,8 @@ class Bot:
             "Excellent credit! I have stored your credit score for later. ": list(range(750,851)),
             "Good credit! I have stored your credit score for later. ": list(range(700, 750)),
             "Average credit. I have stored your credit score for later. ": list(range(620, 700)),
-            "Below Average credit. I have stored your credit score for later. ": list(range(500, 620)),
-            "Bad credit. I have stored your credit score for later. ": list(range(300, 500))
+            "Below Average credit. I have stored your credit score for later. ": list(range(600, 620)),
+            "Bad credit. I have stored your credit score for later. ": list(range(300, 600))
         }
 
         #     string_func = {credit : '*credit*'
@@ -54,11 +54,11 @@ class Bot:
                 print(key)
                 self.precr = False
                 self.beginning = False
-                return bot.mainLoop()
+                return self.mainLoop()
             
             elif self.credit_score < str(300) or self.credit_score > str(850):
                 print("Error: Out of FICO range ")
-                return bot.mainLoop()
+                return self.mainLoop()
 
 # Intitalizing loop where we learn about the user and store data to be used at a later date
 # In each case we check if the input ever equals any exit queues which will break the loop and terminate the bot entirely
@@ -67,11 +67,11 @@ class Bot:
         while self.beginning_loop == True:
 
             if self.start in self.exit:
-                bot.quit()
+                self.quit()
                 break
 
             if self.start in self.greetings:
-                bot.greeting()
+                self.greeting()
                 func = True
 
             elif self.start not in self.greetings:
@@ -85,10 +85,10 @@ class Bot:
                 elif x == False:
                     if self.main not in self.exit:
                         self.beginning = False
-                        return bot.mainLoop()
+                        return self.mainLoop()
 
             if self.opening in self.exit:
-                bot.quit()
+                self.quit()
                 break
                 
             if func == True:
@@ -96,15 +96,15 @@ class Bot:
                 self.meeting = input(f"Nice to meet you {self.opening}! What part of finance or investing are you interested in? ")
                      
             if "credit" in self.meeting:
-                bot.creditRating()
+                self.creditRating()
                 
             elif self.meeting not in self.opening:
                 if self.meeting in self.exit:
-                    bot.quit()
+                    self.quit()
                     break
                 else:
                     self.beginning = False
-                    bot.mainLoop()
+                    self.mainLoop()
 
 # After the inital loop is ran through, it will be directed to this mainLoop method which will be present for the rest of the chat log
 
@@ -112,7 +112,7 @@ class Bot:
         if self.beginning == False:
             while self.main not in self.exit:
                 if "credit" in self.main and self.precr == True:
-                    bot.creditRating()
+                    self.creditRating()
                 else:
                     self.main = input("What would you like to talk about? ")
 
