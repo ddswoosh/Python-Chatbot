@@ -22,7 +22,7 @@ Natural Language Processing and Pytorch training will be rolling out as the proj
 * Pyscript
 * Pyodbc
 * Microsoft SQL Suite (MSQL Server, SSIS, SSMS)
-* Desktop App built with C++ using .Net **Not close to this but will be the very end of the project**
+* Desktop App built with C++ using .Net **Last part of the project**
 
 
 This is a solo project
