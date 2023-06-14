@@ -1,4 +1,4 @@
-from main import Bot
+from Main import Bot
 import pyodbc
 
 connection_string = ("Driver={SQL Server}; Server=PC\SQLEXPRESS;Database=nc_auth;trusted_connetion=Yes;")
